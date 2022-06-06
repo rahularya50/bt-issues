@@ -107,9 +107,9 @@ class IssueTitleMessage(Decodable):
 class IssueReplyMessage(Decodable):
     PATTERN = ListOf(OneOf(IssueComment, SKIP))
 
-    comments: List[str]
+    comments: List[IssueComment]
 
-    def __init__(self, *comments: str):
+    def __init__(self, *comments: IssueComment):
         match_check(bool(comments), "replies must have at least one comment")
         self.comments = list(comments)
 

@@ -2,6 +2,8 @@ from dataclasses import dataclass
 from enum import Enum
 from typing import Iterator, List, Optional, Type, TypeVar, Union
 
+from typing_extensions import assert_never
+
 
 class DType(Enum):
     str = 0
